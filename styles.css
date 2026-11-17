@@ -1,0 +1,355 @@
+:root {
+    --lateral-bg: #0f172a;
+    --lateral-texto: #e2e8f0;
+    --lateral-suave: #94a3b8;
+    --destaque: #0891b2;
+    --destaque-claro: #22d3ee;
+    --texto: #1e293b;
+    --texto-suave: #64748b;
+    --fundo-pagina: #eef2f7;
+    --fundo-cv: #ffffff;
+    --borda: #e2e8f0;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+    background: var(--fundo-pagina);
+    color: var(--texto);
+    line-height: 1.6;
+    padding: 32px 16px;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  /* ---------- Layout principal ---------- */
+  .cv {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--fundo-cv);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15);
+  }
+  
+  /* ---------- Coluna lateral ---------- */
+  .cv-lateral {
+    background: var(--lateral-bg);
+    color: var(--lateral-texto);
+    padding: 40px 28px;
+  }
+  
+  .avatar {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--lateral-bg);
+    background: linear-gradient(135deg, var(--destaque-claro), var(--destaque));
+    box-shadow: 0 0 0 5px rgba(34, 211, 238, 0.2);
+    object-fit: cover;
+    object-position: 40% 35%;
+  }
+  
+  .cv-lateral .secao {
+    margin-bottom: 28px;
+  }
+  
+  .cv-lateral .secao-titulo {
+    color: var(--destaque-claro);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+  }
+  
+  .contato {
+    list-style: none;
+    display: grid;
+    gap: 12px;
+  }
+  
+  .contato li {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+    word-break: break-word;
+  }
+  
+  .contato .rotulo {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--lateral-suave);
+  }
+  
+  .contato a:hover {
+    color: var(--destaque-claro);
+    text-decoration: underline;
+  }
+  
+  /* Habilidades com barra */
+  .habilidade {
+    margin-bottom: 12px;
+  }
+  
+  .habilidade-topo {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.88rem;
+    margin-bottom: 4px;
+  }
+  
+  .habilidade-nivel {
+    color: var(--lateral-suave);
+    font-size: 0.78rem;
+  }
+  
+  .barra {
+    height: 6px;
+    background: rgba(148, 163, 184, 0.25);
+    border-radius: 99px;
+    overflow: hidden;
+  }
+  
+  .barra-preenchimento {
+    width: 33%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--destaque), var(--destaque-claro));
+    border-radius: 99px;
+  }
+  
+  .lista-simples {
+    list-style: none;
+    display: grid;
+    gap: 6px;
+    font-size: 0.9rem;
+  }
+  
+  .lista-simples li::before {
+    content: "\203A";
+    color: var(--destaque-claro);
+    margin-right: 8px;
+    font-weight: 700;
+  }
+  
+  /* ---------- Coluna principal ---------- */
+  .cv-principal {
+    padding: 44px 44px 40px;
+  }
+  
+  .cabecalho {
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 3px solid var(--destaque);
+  }
+  
+  .cabecalho h1 {
+    font-size: 2.4rem;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    color: var(--lateral-bg);
+  }
+  
+  .cabecalho .titulo {
+    margin-top: 6px;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--destaque);
+  }
+  
+  .secao {
+    margin-bottom: 30px;
+  }
+  
+  .secao-titulo {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: var(--destaque);
+    padding-bottom: 6px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--borda);
+  }
+  
+  .texto {
+    color: var(--texto);
+    text-align: justify;
+  }
+  
+  /* Itens (experiência, formação, cursos) */
+  .item {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 22px;
+    border-left: 2px solid var(--borda);
+  }
+  
+  .item::before {
+    content: "";
+    position: absolute;
+    left: -7px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--fundo-cv);
+    border: 3px solid var(--destaque);
+  }
+  
+  .item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .item-titulo {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--lateral-bg);
+  }
+  
+  .item-sub {
+    font-size: 0.95rem;
+    color: var(--destaque);
+    font-weight: 500;
+  }
+  
+  .item-periodo {
+    display: inline-block;
+    margin: 4px 0 8px;
+    font-size: 0.78rem;
+    color: var(--texto-suave);
+    background: #f1f5f9;
+    padding: 2px 10px;
+    border-radius: 99px;
+  }
+  
+  .item-desc {
+    font-size: 0.93rem;
+    color: var(--texto-suave);
+    margin-bottom: 8px;
+  }
+  
+  .item ul {
+    padding-left: 18px;
+    font-size: 0.92rem;
+  }
+  
+  .item ul li {
+    margin-bottom: 2px;
+  }
+  
+  /* Chips */
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .chip {
+    font-size: 0.82rem;
+    padding: 4px 12px;
+    border-radius: 99px;
+    background: #ecfeff;
+    color: #0e7490;
+    border: 1px solid #a5f3fc;
+  }
+  
+  .cv-lateral .chip {
+    background: rgba(34, 211, 238, 0.1);
+    color: var(--lateral-texto);
+    border-color: rgba(34, 211, 238, 0.3);
+  }
+  
+  /* Objetivo e disponibilidade */
+  .grade-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 24px;
+    margin-top: 16px;
+  }
+  
+  .info .rotulo {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--texto-suave);
+  }
+  
+  .info .valor {
+    font-size: 0.92rem;
+    font-weight: 500;
+  }
+  
+  /* ---------- Responsivo ---------- */
+  @media (max-width: 760px) {
+    body {
+      padding: 16px 8px;
+    }
+  
+    .cv {
+      grid-template-columns: 1fr;
+    }
+  
+    .cv-lateral {
+      padding: 32px 22px;
+    }
+  
+    .cv-principal {
+      padding: 28px 22px;
+    }
+  
+    .cabecalho h1 {
+      font-size: 1.9rem;
+    }
+  
+    .grade-info {
+      grid-template-columns: 1fr;
+    }
+  
+    .texto {
+      text-align: left;
+    }
+  }
+  
+  /* ---------- Impressão / PDF ---------- */
+  @media print {
+    @page {
+      size: A4;
+      margin: 0;
+    }
+  
+    body {
+      background: #fff;
+      padding: 0;
+    }
+  
+    .cv {
+      box-shadow: none;
+      border-radius: 0;
+      max-width: none;
+      min-height: 100vh;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  
+    .item,
+    .habilidade {
+      break-inside: avoid;
+    }
+  }
+  
+  
